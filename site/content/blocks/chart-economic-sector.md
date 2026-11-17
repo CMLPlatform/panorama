@@ -1,0 +1,1 @@
+The figure represents the domestic consumption either by economic sectors or final demand categories for the selected commodity and economy. Colours in the horizontal stacked bars differentiate subcategories of broader economic sectors.  It corresponds to the sum in rows of the U (Use) and Y (final demand) tables in a MRSUT (Multi-Regional Supply and Use Table) framework.

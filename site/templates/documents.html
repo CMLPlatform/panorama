@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="wrap prose">
+  <h1>{{ page.title }}</h1>
+  <div class="doc-search">
+    <label for="doc-query">Search documents</label>
+    <input id="doc-query" type="search" placeholder="Title, author, subject, year…">
+    <p id="doc-count" class="muted" aria-live="polite"></p>
+  </div>
+
+  <ul class="file-list" id="doc-list">
+    {% for doc in documents %}
+    <li class="file-item doc" data-search="{{ search_text(doc) }}">
+      <h2>{% if doc.file %}<a href="{{ doc.file }}">{{ doc.title }}</a>{% else %}{{ doc.title }}{% endif %}</h2>
+      <dl class="doc-meta">
+        {% for key, label in [("creator", "Author"), ("contributor", "Contributor"), ("year", "Year"), ("type", "Type"), ("subject", "Subject"), ("coverage", "Coverage"), ("language", "Language"), ("format", "Format")] %}
+        {% if doc[key] is defined %}<div><dt>{{ label }}</dt><dd>{{ doc[key] }}</dd></div>{% endif %}
+        {% endfor %}
+      </dl>
+      {% if doc.description %}<details><summary>Summary</summary>{{ doc.description | markdown }}</details>{% endif %}
+      {% if doc.file %}<a class="download" href="{{ doc.file }}" download>Download {{ doc.format | default('file') }}</a>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <aside class="disclaimer">{{ block("documents-disclaimer") }}</aside>
+</article>
+{% endblock %}
+{% block scripts %}
+<script type="module" src="{{ asset('js/documents.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,1 @@
+The graph represents the total domestic demand of different elements for the selected economy. It corresponds to the sum of the U (Use) and Y (final demand) tables in a MRSUT (Multi-Regional Supply and Use Table) framework.

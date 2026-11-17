@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body_class %}home{% endblock %}
+{% block main %}
+<section class="hero">
+  <div class="wrap">
+    <h1>{{ site.slogan }}</h1>
+    <ul class="entry-links">
+      <li><a class="entry entry-country" href="/data-by-country"><span>Access data</span><strong>by country</strong></a></li>
+      <li><a class="entry entry-commodity" href="/data-by-commodity"><span>Access data</span><strong>by commodity</strong></a></li>
+      <li><a class="entry entry-product" href="/data-by-product"><span>Access data</span><strong>by product</strong></a></li>
+    </ul>
+  </div>
+</section>
+<section class="wrap prose intro">
+  {{ body }}
+</section>
+{% endblock %}

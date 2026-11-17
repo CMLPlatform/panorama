@@ -1,0 +1,8 @@
+// Mobile menu toggle. On wide screens the menu is always visible.
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.getElementById("main-menu");
+toggle?.addEventListener("click", () => {
+  const open = toggle.getAttribute("aria-expanded") === "true";
+  toggle.setAttribute("aria-expanded", String(!open));
+  menu.classList.toggle("is-open", !open);
+});

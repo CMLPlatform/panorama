@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="wrap prose">
+  <h1>{{ page.title }}</h1>
+  {{ body }}
+
+  {% for group in file_groups | default([]) %}
+  <section class="file-group">
+    <h2>{{ group.title }}</h2>
+    {% if group['items'] %}
+    <ul class="file-list">
+      {% for item in group['items'] %}
+      <li class="file-item">
+        <h3>
+          {% if item.file %}<a href="{{ item.file }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+        </h3>
+        {% if item.description %}{{ item.description | markdown }}{% endif %}
+        {% if item.file %}<a class="download" href="{{ item.file }}" download>Download PDF</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="muted">No documents yet.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+
+  {% if after is defined %}
+  <aside class="disclaimer">{{ block(after) }}</aside>
+  {% endif %}
+</article>
+{% endblock %}

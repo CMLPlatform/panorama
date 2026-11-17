@@ -1,0 +1,56 @@
+# PANORAMA website: PostgreSQL database, read-only data API, and static web server.
+#
+#   cp .env.example .env    # then set the passwords
+#   docker compose up -d --build
+#
+# The database loads every *.sql / *.sql.gz / *.sh file in ${PANORAMA_DB_INIT}
+# the first time it starts (empty volume). By default that is the synthetic
+# placeholder data. To load the real dump, see README.md.
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: panorama
+      POSTGRES_USER: panorama_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      PANORAMA_READER_PASSWORD: ${PANORAMA_READER_PASSWORD:?Set PANORAMA_READER_PASSWORD in .env}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./db/init/00-reader-role.sh:/docker-entrypoint-initdb.d/00-reader-role.sh:ro
+      - ${PANORAMA_DB_INIT:-./db/synthetic}:/docker-entrypoint-initdb.d/data:ro
+      - ./db/init/01-load-data.sh:/docker-entrypoint-initdb.d/01-load-data.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U panorama_admin -d panorama"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    # No published port: only the api service can reach the database.
+
+  api:
+    build: ./api
+    restart: unless-stopped
+    environment:
+      PANORAMA_DB_HOST: db
+      PANORAMA_DB_NAME: panorama
+      PANORAMA_DB_USER: panorama_reader
+      PANORAMA_DB_PASSWORD: ${PANORAMA_READER_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+      args:
+        PANORAMA_NOTICE: ${PANORAMA_NOTICE:-}
+    restart: unless-stopped
+    ports:
+      - "${PANORAMA_HTTP_PORT:-8080}:80"
+    depends_on:
+      - api
+
+volumes:
+  db-data:

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ page.title }}{% endblock %} | {{ site.name }}</title>
+  <meta name="description" content="{{ site.slogan }}">
+  <link rel="icon" href="{{ asset('img/logo.png') }}">
+  <link rel="stylesheet" href="{{ asset('css/site.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="{{ site.name }} home">
+        <img src="{{ asset('img/logo.png') }}" alt="">
+        <span class="visually-hidden">{{ site.name }}</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
+      <nav id="main-menu" class="main-menu" aria-label="Main">
+        <ul>
+          {% for item in site.menu %}
+          {% set children = item.get('children', []) %}
+          <li class="{{ 'has-children' if children else '' }}">
+            {% if item.get('url') %}
+            <a href="{{ item.url }}" {% if item.url == current %}aria-current="page"{% endif %}>{{ item.title }}</a>
+            {% else %}
+            <span class="menu-label" tabindex="0">{{ item.title }}</span>
+            {% endif %}
+            {% if children %}
+            <ul class="submenu">
+              {% for child in children %}
+              <li><a href="{{ child.url }}" {% if child.url == current %}aria-current="page"{% endif %}>{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  {% if notice %}
+  <div class="notice" role="note"><div class="wrap">{{ notice }}</div></div>
+  {% endif %}
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>{{ site.name }} – {{ site.slogan }}</p>
+      <nav aria-label="Footer">
+        <ul>
+          {% for item in site.footer %}
+          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script type="module" src="{{ asset('js/menu.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set selectors = {
+  "country": ("Country", "Select a country"),
+  "commodity": ("Commodity", "Select a commodity"),
+  "product": ("Product", "Type or select a product"),
+} %}
+{# Chart titles. "{selected}" is replaced with the selected country, commodity or product. #}
+{% set charts = {
+  "country-use": ("Production of commodities for", "in tonnes", "chart-country-use"),
+  "final-demand": ("Final demand for", "in tonnes", "chart-final-demand"),
+  "economic-sector": ("Economic sector for", "in tonnes", "chart-economic-sector"),
+  "substance-flow": ("Flow for", "in tonnes", "chart-substance-flow"),
+  "import": ("Import flows for", "in tonnes", "chart-import-export"),
+  "export": ("Export flows for", "in tonnes", "chart-import-export"),
+  "element-make": ("Production of", "in tonnes", "chart-element-make"),
+  "product-composition": ("Product composition of", "in percent", "chart-product-composition"),
+} %}
+{% block body_class %}data-page{% endblock %}
+{% block main %}
+<div class="wrap">
+  <h1 class="visually-hidden">{{ page.title }}</h1>
+  <section class="main-selector" aria-label="{{ selectors[page.mode][0] }}">
+    <label for="main-select">
+      <span class="selector-title">{{ selectors[page.mode][0] }}</span>
+      <span class="selector-hint">{{ selectors[page.mode][1] }}</span>
+    </label>
+    {% if page.mode == "product" %}
+    <input id="main-select" list="main-options" autocomplete="off" placeholder="Loading products…">
+    <datalist id="main-options"></datalist>
+    {% else %}
+    <select id="main-select" disabled><option>Loading…</option></select>
+    {% endif %}
+  </section>
+
+  <div id="charts" data-mode="{{ page.mode }}">
+    {% for id in page.charts %}
+    {% set title = charts[id] %}
+    <section class="chart" data-chart="{{ id }}" aria-labelledby="title-{{ id }}">
+      <h2 id="title-{{ id }}" class="chart-title">{{ title[0] }} <span class="selected"></span> {{ title[1] }}</h2>
+      <div class="chart-help">{{ block(title[2]) }}</div>
+      <div class="chart-controls"></div>
+      <div class="chart-body">
+        <div class="chart-canvas" role="img" aria-label="{{ title[0] }} chart"></div>
+        <p class="chart-status" aria-live="polite"></p>
+      </div>
+      <div class="chart-extra"></div>
+    </section>
+    {% endfor %}
+  </div>
+
+  <aside class="disclaimer">{{ block("data-disclaimer") }}</aside>
+  {% if "import" in page.charts or "element-make" in page.charts %}
+  <p class="attribution muted">Map boundaries: © EuroGeographics for the administrative boundaries (Eurostat GISCO).</p>
+  {% endif %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset('vendor/echarts-5.6.0.min.js') }}"></script>
+<script type="module" src="{{ asset('js/data-page.js') }}"></script>
+{% endblock %}

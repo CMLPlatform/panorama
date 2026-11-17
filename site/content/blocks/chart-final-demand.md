@@ -1,0 +1,1 @@
+The graph represents the final demand the selected economy and product. This final demand is divided into 6 sub-categories, and it corresponds to the total of Y(final demand) table in a MRSUT (Multi-Regional Supply and Use Table) framework.

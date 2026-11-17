@@ -1,0 +1,108 @@
+groups:
+- title: 0 - Go-To-Market Strategy
+  items:
+  - title: D0.3 Feasibility Study Report
+    description: This report gives the blueprint on how the project approaches the valorization of the
+      information, including various prospect for the long-term data curation.
+    file: /files/2020-11/D0.3_GTM_final_0.pdf
+- title: 1 - Management And Dissemination Activities
+  items:
+  - title: D1.1 PANORAMA Dissemination Report
+    description: This document details the PANORAMA methodology for communicating the various results
+      to both stakeholders and the general public, and the first steps that will be carried out in order
+      to ensure such tasks are carried out.
+    file: /files/2020-11/D1.1_Panorama_Dissemination_report_V1_1.pdf
+- title: 2 - Professional Development
+  items:
+  - title: D2.1 Material Flow Analysis Fundamentals
+    description: The slides that were used to develop an M.Sc.-level Material Flow Analysis lecture to
+      be made available to the partners for use in courses.
+    file: /files/2020-12/D2.1_Lecture_MFA_UB_logos.pdf
+- title: 3 - Data Harvesting
+  items:
+  - title: D3.1 Report on data sources as input to WP4
+    description: This report presents the first step towards the development of a complete and harmonized
+      PANORAMA database . It portrays an assessment of the different data sources available, the type
+      of data provided, an overview of the missing data was compiled, and how to select possible data
+      sources for data gap filling.
+    file: /files/2020-11/D3.1_Report_on_data_sources_as_input_to_WP4.pdf
+  - title: Deliverable 3.2 Report on Concordances
+    description: Most of the data sources used within the Panorama project use very different classification
+      systems to describe the entities they report on. Such sources include but are not limited to the
+      production and trade volumes for different regions, products and industries, final demand statistics,
+      material extraction accounts, product material composition data, etc. Various classifications used
+      in such data sources have several major characteristics that allow distinguishing one from another
+      (the level of detail, the units used, either monetary or physical, the name, the descriptions, etc.).
+      To be able to combine such diverse data sources within the supply and use tables (SUTs) of the Panorama
+      project, concordances between underlying classifications have to be obtained first. In this report,
+      we described which classifications have been used within the project until now and how they have
+      linked to each other.
+- title: 4 - Data Processing
+  items:
+  - title: D4.1 Map Of Data To Stages Along The Anthropogenic Metal Cycle
+    description: This deliverable provides information regarding the spatiotemporal data availability
+      for various elements throughout the anthropogenic metal cycle.
+    file: /files/2020-12/D4.1_Map-of-data-to-stages.pdf
+  - title: Deliverable 4.2 Estimation of composition and lifetimes
+    description: The work described in this deliverable relates to the collection and processing of composition
+      and lifetime data, as well as information on end-of-life (EoL) characteristics of the products in
+      the anthropogenic material cycle. A total of 16 elements/substances were selected based on criteria
+      relating to proliferation and criticality.
+    file: /files/2021-11/D4.2_Report_on_composition_and_lifetime_dataset_0.pdf
+  - title: Deliverable 4.3 Description of the initial dataset
+    description: The initial physical dataset was generated for the EU-28 countries plus the Rest of the
+      World region for the year 2011. It contains highly detailed data on products that were produced
+      in these countries, the international trade, and the households expenditures (all in tonnes), and
+      the composition (in weight fraction) of two elements (tantalum and copper) of said products. Additionally,
+      for each of these data points, a flag was appointed to indicate the quality and the level of transformation
+      applied to the original dataset to be converted into tonnes and/or to the PANORAMA classification
+      system.
+    file: /files/2021-11/D4.3_initial_dataset_0.pdf
+- title: 5 - Balancing
+  items:
+  - title: D5.1 Report With Review Of Balancing Routines
+    description: This report provides a literature review of the existing balancing procedures and indicates
+      which valuable properties hold for each approach. Section 2.1. gives a description of the desired
+      balancing properties and Section 2.2 briefly introduces the different balancing procedures mentioned
+      in the literature review and Section 3 concludes.
+    file: /files/2020-11/D5_1_Literature_review.pdf
+  - title: 'D5.2: Report On Test Of Routines And Data Set For 1-2 EU MS'
+    description: This report presents the methodology and first prototype of the PANORAMA database for
+      Denmark (year 2011). Results were then aggregated and compared to other physical stock-flow databases,
+      including Exiobase and ProSUM.
+    file: /files/2020-11/D5.2_Report_on_test_of_routines.pdf
+- title: 6 - IT Infrastructure
+  items:
+  - title: D6.1 Data Model Evolution And Code Lists
+    description: This report describes the first design and implementation procedure for a suitable IT
+      infrastructure for the new information service, based on updating the existing ProSUM Urban Mine
+      and EXIOBASE data models to create a model to manage data on stocks and flows of materials and their
+      compositions across Europe.
+    file: /files/2020-11/D6.1_Data_Model_Evolution.pdf
+  - title: Deliverable 6.2 Implementation of IT infrastructure
+    description: 'WP6 is in charge of managing the datasets which after the application of improved reconciliation
+      procedures, lead to develop a solidly-built professional web application serving balanced stock-flow
+      diagrams for the PANORAMA project. These information services are made available to the panel of
+      end users through a graphic interface with data download functionalities.
+
+
+      As a result of this work in Task 6.2, the present document describes the detailed functional and
+      technical specifications as well as all other aspects useful to the PANORAMA database and data dissemination
+      application, such as hardware, software and human constraints and the corresponding IT infrastructure.'
+    file: /files/2021-11/D62_Implementation_of_IT_infrastructure_0.pdf
+  - title: Deliverable 6.3 PANORAMA Information Service Portal
+    description: This document is the preparation stage of the PANORAMA website, which corresponds to
+      the macro specification of the digital product. This step is mainly based on the conclusions of
+      the Go-To-Market study presented in the “WPOGTM Upscaling project PANORAMA” report and on the analysis
+      of existing websites related to the study theme.
+resources:
+- title: Resources
+  items:
+  - title: Lecture Material Flow Analysis 2019
+    description: ''
+    file: /files/2020-11/Lecture_MFA_UB_2019.pdf
+- title: Summer School Documents
+  items:
+  - title: Report Summer School + Annexes 2020
+    description: ''
+    file: /files/2020-11/Report_Summer_School_Panorama__annexes_2020.11.24.pdf

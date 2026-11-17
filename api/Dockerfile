@@ -1,0 +1,13 @@
+FROM python:3.12-slim
+
+RUN useradd --create-home --uid 1000 app
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY panorama_api ./panorama_api
+
+USER app
+EXPOSE 8000
+CMD ["uvicorn", "panorama_api.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2", "--proxy-headers"]

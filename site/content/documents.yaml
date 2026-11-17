@@ -1,0 +1,72 @@
+documents:
+- title: Deliverable 3.2 Report on Concordances - Appendix
+  creator: Levon Amatuni et al.
+  contributor: PANORAMA consortium
+  coverage: Europe, Global
+  format: PDF
+  language: English
+  subject: Project deliverable
+  type: Deliverable
+  year: 2021
+  description: Most of the data sources used within the PANORAMA project use very different classification
+    systems to describe the entities they report on. Such sources include (but are not limited to) the
+    production and trade volumes for different regions, products and industries, final demand statistics,
+    material extraction accounts, product material composition data, etc. Various classifications used
+    in such data sources have several major characteristics that allow distinguishing one from another
+    (the level of detail, the units used, either monetary or physical, the name, the descriptions, etc.).
+    To be able to combine such diverse data sources within the supply and use tables (SUTs) of the PANORAMA
+    project, concordances between underlying classifications have to be obtained first. In this report,
+    we described which classifications have been used within the project until now and how they have linked
+    to each other.
+  file: /files/2021-11/D32_Appendix_CPC2EXIO_0.pdf
+- title: Deliverable 4.2 Estimation of composition and lifetimes
+  creator: Habib et al.
+  contributor: PANORAMA consortium
+  format: PDF
+  language: English
+  subject: Project deliverable
+  type: Deliverable
+  year: 2021
+  description: The work described in this deliverable relates to the collection and processing of composition
+    and lifetime data, as well as information on end-of-life (EoL) characteristics of the products in
+    the anthropogenic material cycle. A total of 16 elements/substances were selected based on criteria
+    relating to proliferation and criticality.
+  file: /files/2021-11/D4.2_Report_on_composition_and_lifetime_dataset.pdf
+- title: Deliverable 4.3 Description of the initial dataset
+  creator: Yamamoto et al.
+  coverage: Europe
+  format: PDF
+  type: Deliverable
+  year: 2021
+  description: This document describes the initial physical dataset was generated for the EU-28 countries
+    plus the Rest of the World region for the year 2011. It contains highly detailed data on products
+    that were produced in these countries, the international trade, and the households expenditures (all
+    in tonnes), and the composition (in weight fraction) of two elements (tantalum and copper) of said
+    products. Additionally, for each of these data points, a flag was appointed to indicate the quality
+    and the level of transformation applied to the original dataset to be converted into tonnes and/or
+    to the PANORAMA classification system.
+  file: /files/2021-11/D4.3_initial_dataset.pdf
+- title: Deliverable 6.2 Implementation of IT infrastructure
+  creator: Clain et al.
+  contributor: PANORAMA consortium
+  subject: Project deliverable
+  type: Deliverable
+  year: 2021
+  description: 'WP6 is in charge of managing the datasets which after the application of improved reconciliation
+    procedures, lead to develop a solidly-built professional web application serving balanced stock-flow
+    diagrams for the PANORAMA project. These information services are made available to the panel of end
+    users through a graphic interface with data download functionalities.
+
+
+    The underlying database has first been modelled as part of Task 6.1. As presented in D6.1 “Data Model
+    Evolution and Code Lists”, it builds on the results of two previous projects, namely ProSUM and EXIOBASE
+    which produced European and global databases dedicated to the Urban Mine/Urban Waste and Multi-Regional
+    Environmentally Extended Supply and Use / Input-Output, respectively. Considering the PANORAMA thematic
+    objectives, the database structure has been refined as a consequence of the advanced works in WP 3,
+    4 and 5.
+
+
+    As a result of this work in Task 6.2, the present document describes the detailed functional and technical
+    specifications as well as all other aspects useful to the PANORAMA database and data dissemination
+    application, such as hardware, software and human constraints and the corresponding IT infrastructure.'
+  file: /files/2021-11/D62_Implementation_of_IT_infrastructure.pdf
