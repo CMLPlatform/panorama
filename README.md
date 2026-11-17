@@ -100,3 +100,13 @@ Drupal module, and they check that invalid input is refused before any query run
   An empty result is now `[]`, not `[{"isic": ""}]`.
 - **Security.** The API reads through a database role that cannot write. It accepts only fixed view
   names and validated parameters. The database has no public port.
+
+## Licence
+
+The source code is licensed under the [GNU General Public License, version 2 or later](LICENSE)
+(GPL-2.0-or-later), the same licence as the original Drupal modules it replaces.
+Copyright 2021-2026 the PANORAMA consortium.
+
+The content in `site/content/` and the images in `site/static/img/` are not under this licence.
+They belong to the PANORAMA consortium. Third-party parts (ECharts, fonts, map data) keep their own
+licences. [NOTICE](NOTICE) lists all of them, and the full licence texts are in [LICENSES/](LICENSES/).

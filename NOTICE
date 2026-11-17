@@ -1,0 +1,62 @@
+PANORAMA website
+Copyright 2021-2026 the PANORAMA consortium
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version (SPDX: GPL-2.0-or-later). The text of version 2 is in LICENSE.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+The licence covers the source code in this repository: api/, site/build.py,
+site/templates/, site/static/js/ (except vendor files), site/static/css/,
+web/, db/, and tools/. It also covers the synthetic data in db/synthetic/.
+Parts of the API logic are ported from the PANORAMA Drupal modules (BRGM),
+which were also licensed GPL-2.0-or-later.
+
+-------------------------------------------------------------------------------
+Content that is NOT covered by the Apache License
+-------------------------------------------------------------------------------
+
+site/content/ (page texts, deliverables, documents, PDF files and images) and
+site/static/img/ (the PANORAMA logo, icons and background image) are the
+property of the PANORAMA consortium. They may be used and distributed provided
+that the PANORAMA project and the specific document are properly referenced.
+See site/content/blocks/deliverables-disclaimer.md for the full terms.
+
+-------------------------------------------------------------------------------
+Third-party components and licence compatibility
+-------------------------------------------------------------------------------
+
+The components below keep their own licences. Apache License 2.0 components are
+compatible with GPL version 3. That is why this program uses "version 2 or (at
+your option) any later version", and not GPL version 2 only.
+
+Apache ECharts 5.6.0
+  site/static/vendor/echarts-5.6.0.min.js
+  Licence: Apache License, Version 2.0 (LICENSES/Apache-2.0.txt)
+  NOTICE of Apache ECharts:
+
+    Apache ECharts
+    Copyright 2017-2024 The Apache Software Foundation
+
+    This product includes software developed at
+    The Apache Software Foundation (https://www.apache.org/).
+
+Open Sans (font)
+  site/static/fonts/open-sans.woff2
+  Digitized data copyright (c) 2010-2011, Google Corporation.
+  Licence: Apache License, Version 2.0 (LICENSES/Apache-2.0.txt)
+
+Poppins (font)
+  site/static/fonts/poppins.woff2
+  Copyright 2014-2017 Indian Type Foundry (info@indiantypefoundry.com)
+  Licence: SIL Open Font License, Version 1.1 (LICENSES/OFL-1.1-Poppins.txt)
+
+Country borders and label points (map data)
+  site/static/geo/europe.json, site/static/geo/labels.json
+  Source: Eurostat GISCO, countries 2020 (CNTR_RG_20M_2020_4326, country labels)
+  (c) EuroGeographics for the administrative boundaries.
+  Reuse is allowed with this attribution. The data pages show it.
